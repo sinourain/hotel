@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 2019_07_03_130738) do
     t.integer "room_id"
     t.integer "rate_id"
     t.integer "client_id"
+    t.date "start_date"
+    t.date "finish_date"
+    t.string "member_tier"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_stays_on_client_id"

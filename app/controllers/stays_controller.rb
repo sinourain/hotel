@@ -69,6 +69,13 @@ class StaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stay_params
-      params.require(:stay).permit(:room_id, :rate_id, :client_id)
+      params.require(:stay).permit(
+        :room_id, 
+        :rate_id, 
+        :client_id, 
+        :start_date, 
+        :finish_date, 
+        :member_tier
+      )
     end
 end
