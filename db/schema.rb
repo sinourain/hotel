@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_03_130319) do
+ActiveRecord::Schema.define(version: 2019_07_03_130738) do
 
   create_table "rates", force: :cascade do |t|
     t.string "day"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2019_07_03_130319) do
     t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stays", force: :cascade do |t|
+    t.integer "room_id"
+    t.integer "rate_id"
+    t.integer "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_stays_on_client_id"
+    t.index ["rate_id"], name: "index_stays_on_rate_id"
+    t.index ["room_id"], name: "index_stays_on_room_id"
   end
 
   create_table "users", force: :cascade do |t|

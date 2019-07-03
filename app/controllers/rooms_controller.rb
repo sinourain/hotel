@@ -4,7 +4,14 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.availables
+    @rooms = Room.all
+  end
+
+  def availables_with_current_rate
+    rooms = Room.availables
+    current_rate = Rate.current_rate
+
+    render json: {current_rate: current_rate, rooms: rooms}, status: 200
   end
 
   # GET /rooms/1

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @stay.room %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @stay.rate %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @stay.client %>
+</p>
+
+<%= link_to 'Edit', edit_stay_path(@stay) %> |
+<%= link_to 'Back', stays_path %>
